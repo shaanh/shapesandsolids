@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Shapes and Solids!</title>
+    <link rel='stylesheet' href='/public/stylesheets/style2.css' />
+</head>
+<body>
+<h2>Square</h2>
+<p>Enter the side length to calculate the area and perimeter:</p>
+<br>
+<p>
+<input type="number" id="sidelength"><br>
+<button type="button" onclick="myFunction()">Submit</button>
+<br><br><br>
+Area: <input type="number" id="area" readonly>
+<br><br>
+Perimeter: <input type="number" id="perimeter" readonly>
+</p>
+
+<br>
+<a href="/" class="btn"><strong>Home</strong></a>
+
+<script>
+function myFunction() {
+    var length;
+
+    length = document.getElementById("sidelength").value;
+    
+    if (length < 0) {
+        console.log("Length cannot be less than zero!");
+        document.getElementById("area").value = 0;
+        document.getElementById("perimeter").value = 0;
+    } else {
+        document.getElementById("area").value = length * length;
+        document.getElementById("perimeter").value = 4 * length;
+    }
+}
+</script>
+
+</body>
+</html>

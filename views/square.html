@@ -12,9 +12,9 @@
 <input type="number" id="sidelength"><br>
 <button type="button" onclick="myFunction()">Submit</button>
 <br><br><br>
-Area: <input type="number" id="area">
+Area: <input type="number" id="area" readonly>
 <br><br>
-Perimeter: <input type="number" id="perimeter">
+Perimeter: <input type="number" id="perimeter" readonly>
 </p>
 
 <br>
@@ -22,13 +22,18 @@ Perimeter: <input type="number" id="perimeter">
 
 <script>
 function myFunction() {
-    var x;
+    var length;
 
-    //Get the value of the input field with id="firstnumber"
-    x = document.getElementById("sidelength").value;
+    length = document.getElementById("sidelength").value;
     
-    document.getElementById("area").value = x * x;
-    document.getElementById("perimeter").value = 4 * x;
+    if (length < 0) {
+        console.log("Length cannot be less than zero!");
+        document.getElementById("area").value = 0;
+        document.getElementById("perimeter").value = 0;
+    } else {
+        document.getElementById("area").value = length * length;
+        document.getElementById("perimeter").value = 4 * length;
+    }
 }
 </script>
 
